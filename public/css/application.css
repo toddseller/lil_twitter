@@ -1,22 +1,64 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+.login {
+  margin-top: 150px;
+  padding: 25px;
+  width: 450px;
+  background-color: #226699;
+  height: 400px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #ffffff;
 }
+.registration {
+  margin-top: 25px;
+  height: 580px;
+}
+
 th {
   text-align: left;
 }
 
 #tweetText {
-  color: #c9302c;
+  color: #226699;
 }
 
-.tweet-button {
+.nav-button {
   margin-top: 7px;
   margin-right: 75px;
 }
 
 .errors {
 	color: red;
+}
+
+.navbar-brand img {
+  width: auto;
+  height: 28px;
+}
+
+img.logo {
+  width: auto;
+  height: 28px;
+}
+
+.login-logo {
+  margin: 10px auto 0 180px;
+  width: auto;
+  height: 28px;
+}
+.login-form {
+  margin-top: 25px;
+}
+.login-button {
+  margin-top: 25px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-bottom: 25px;
+}
+.register {
+  color: #226699;
+}
+
+.btn-primary {
+  background-color: #226699;
 }

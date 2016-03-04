@@ -6,7 +6,17 @@ post '/tweets' do
 end
 
 get '/tweets' do
+	@user = User.find(session[:user_id])
 	@tweets = Tweet.all
-	erb :'tweets/index'
+	if session[:user_id] == nil
+		redirect "/login"
+	else
+		erb :'tweets/index'
+	end
 end
 
+delete '/tweets' do 
+	@tweet = Tweet.find(params[:id])
+	@tweet.destroy
+	redirect '/tweets'
+end

@@ -1,8 +1,10 @@
 <h1><%=@user.username %>'s Profile</h1>
 
+Tweets | Followers | Following<br> 
+<%= @user.tweets.count %> | <%= @user.followers.count %> | <%= @user.followees.count %> 
+
 <h4><%=@user.username%>'s Tweets:</h4> 
 <% @tweets.each do |tweet| %>
- 	<%= tweet.description %><br>
  	<%= tweet.description %><br>
  <% end %>
 
