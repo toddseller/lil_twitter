@@ -7,3 +7,12 @@
 th {
   text-align: left;
 }
+
+#tweetText {
+  color: #c9302c;
+}
+
+.tweet-button {
+  margin-top: 7px;
+  margin-right: 75px;
+}
