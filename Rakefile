@@ -1,6 +1,7 @@
 require 'rake'
 require 'rspec/core/rake_task'
 require 'bcrypt'
+require 'pry'
 
 
 require ::File.expand_path('../config/environment', __FILE__)
@@ -121,7 +122,7 @@ end
 
 desc 'Start IRB with application environment loaded'
 task "console" do
-  exec "irb -r./config/environment"
+  exec "pry -r./config/environment"
 end
 
 desc "Run the specs"

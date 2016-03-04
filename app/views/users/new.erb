@@ -2,8 +2,10 @@
   <div class="row">
     <div class="col-sm-12">
       Please fill in the following information below:  
-
-      <form method="post" action="/users/new">>
+      <p class="errors"><% if params[:errors] != nil %>
+    Something went wrong here...<%=params[:errors] %>
+    <% end %></p>
+      <form method="post" action="/users/new">
      Full name:<br>
     <input type="text" name="full_name"><br>
     User name:<br>
