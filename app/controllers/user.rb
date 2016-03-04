@@ -8,20 +8,22 @@ get '/users/new' do
 	erb :'users/new'
 end
 
-post '/users/new' do 
+get '/users/:id' do 
+	@user = User.find(params[:id])
+	@tweets = @user.tweets
+	erb :'users/show'
+end
+
+post '/users' do 
 	@user = User.create(username: params[:username], password: params[:password], full_name: params[:full_name], email: params[:email])
 	if @user.valid?
+		session[:user_id] = @user.id
 		redirect "/users"
 	else
     	redirect "/users/new?errors=#{@user.errors.full_messages.join(" and ")}"
 	end
 end
 
-get '/users/:id' do 
-	@user = User.find(params[:id])
-	@tweets = @user.tweets
-	erb :'users/show'
-end
 
 post '/followers' do
 	@user = User.find(session[:user_id])
