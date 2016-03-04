@@ -1,7 +1,7 @@
 <% @tweets.each do |tweet| %>
 	<p><%=User.find(tweet.user_id).username %><br>
 	<%=tweet.description %><br>
-	<form action="/users/<%=session[:user_id]%>/followers" method="post">
+	<form action="/followers" method="post">
 	<input type="hidden" name="user_id" value="<%=tweet.user_id%>">
 	<input type="submit" value="Follow <%=User.find(tweet.user_id).username%>">
 	</form></p>
