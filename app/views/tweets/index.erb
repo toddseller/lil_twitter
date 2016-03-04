@@ -1,22 +1,28 @@
 <% @tweets.each do |tweet| %>
 	<p><%=User.find(tweet.user_id).username %><br>
 	<%=tweet.description %><br>
-	<% if tweet.user_id == session[:user_id] %>
-		<p><form action="/tweets" method="post">
-		<input type="hidden" name="_method" value="delete">
-		<input type="hidden" name="id" value="<%=tweet.id%>">
-		<input type="submit" value="Delete">
-		</form>
-	<% elsif @user.followees.where(id: tweet.user_id).empty?  %>
-		<form action="/followers" method="post">
-		<input type="hidden" name="user_id" value="<%=tweet.user_id%>">
-		<input type="submit" value="Follow <%=User.find(tweet.user_id).username%>">
-		</form>
-	<% else %>
-		<form action="/followers" method="post">
-		<input type="hidden" name="_method" value="delete">
-		<!-- <input type="hidden" name="user_id" value="<%=tweet.user_id%>"> -->
-		<input type="submit" value="Unfollow <%=User.find(tweet.user_id).username%>">
-		</form>
-	<% end %></p>
+
+  <% if tweet.user_id == session[:user_id] %>
+    <p><form action="/tweets" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="id" value="<%=tweet.id%>">
+    <input type="submit" value="Delete">
+    </form>
+  <% elsif @user.followees.where(id: tweet.user_id).empty?  %>
+    <form action="/followers" method="post">
+    <input type="hidden" name="user_id" value="<%=tweet.user_id%>">
+    <input type="submit" value="Follow <%=User.find(tweet.user_id).username%>">
+    </form>
+  <% else %>
+    <form action="/followers" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <!-- <input type="hidden" name="user_id" value="<%=tweet.user_id%>"> -->
+    <input type="submit" value="Unfollow <%=User.find(tweet.user_id).username%>">
+    </form>
+  <% end %></p>
 <% end %>
+
+<% @favorite.each do |favorite| %>
+  <p><%=favorite.count%></p><br>
+  <p><% counter = Favorite.find_by(tweet_id: tweet.id) %> <%= "Favorite: " + counter.count.to_s %></p>
+<%end%>
