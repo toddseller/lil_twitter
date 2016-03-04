@@ -16,3 +16,7 @@ th {
   margin-top: 7px;
   margin-right: 75px;
 }
+
+.errors {
+	color: red;
+}

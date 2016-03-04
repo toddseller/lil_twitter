@@ -15,7 +15,11 @@ end
 
 post '/users/new' do 
 	@user = User.create(username: params[:username], password: params[:password], full_name: params[:full_name], email: params[:email])
-	redirect "/users/#{@user.id}"
+	if @user.valid?
+		redirect "/users/#{@user.id}"
+	else
+    	redirect "/users/new?errors=#{@user.errors.full_messages.join(" and ")}"
+	end
 end
 
 get '/users/:id/show' do 
