@@ -27,9 +27,15 @@ post '/users/new' do
 end
 
 get '/users/:id/tweets' do 
-	@users = User.all
 	@tweets = Tweet.all
+	@user = User.find(params[:id])
 	erb :'users/show'
+end
+
+post '/users/:id/tweets' do
+	@user = User.find(session[:user_id])
+  	@tweet = Tweet.create(user_id: session[:user_id], description: params[:tweet])
+  	redirect "users/#{@user.id}/tweets"
 end
 
 
