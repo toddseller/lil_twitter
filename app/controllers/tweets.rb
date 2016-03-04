@@ -5,7 +5,6 @@ post '/tweets' do
   	redirect "/tweets"
 end
 
-
 get '/tweets' do
 	@user = User.find(session[:user_id])
 	@tweets = Tweet.all
