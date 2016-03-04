@@ -1,5 +1,5 @@
 get '/' do
-  erb :index
+  erb :index, layout: false
 end
 
 get '/login' do
@@ -14,3 +14,8 @@ post '/login' do
 	end
 end
  
+get '/logout' do
+  session.delete(:user_id)
+
+  redirect '/'
+end

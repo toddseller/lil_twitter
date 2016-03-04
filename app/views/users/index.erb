@@ -4,3 +4,9 @@ Welcome, <%=@user.username%>! Check out the list of followers below.
 	<p><%= user.full_name %><br>
 	<a href="/users/#{self.id}">@<%= user.username %></a></p>
 <% end %>
+
+
+
+<form action='/logout' method='get'>
+  <input type='submit' value='logout'>
+</form>
