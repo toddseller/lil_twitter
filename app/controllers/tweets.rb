@@ -7,10 +7,10 @@ end
 
 
 get '/tweets' do
-	@user = User.find(session[:user_id])
-	@tweets = Tweet.all
 	if session[:user_id] == nil
 		redirect "/login"
+	@user = User.find(session[:user_id])
+	@tweets = Tweet.all
 	else
 		erb :'tweets/index'
 	end
