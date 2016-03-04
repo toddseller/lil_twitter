@@ -9,7 +9,11 @@ end
 get '/users/:id' do
 	@user = User.find(params[:id]) 
 	@users = User.all
-	erb :'users/index'
+	if @user.id != session[:user_id]
+		redirect '/'
+	else
+		erb :'users/index'
+	end
 end
 
 
@@ -22,7 +26,7 @@ post '/users/new' do
 	end
 end
 
-get '/users/:id/show' do 
+get '/users/:id/tweets' do 
 	@users = User.all
 	@tweets = Tweet.all
 	erb :'users/show'
