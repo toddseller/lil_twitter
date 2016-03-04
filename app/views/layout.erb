@@ -20,14 +20,20 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img class="center-block" src="" alt=""></a>
+        <% if session[:user_id] %>
+          <a class="navbar-brand center-block" href="#"><img class="center-block" src="/imgs/twitter_blue.png" alt="twitter logo"></a>
+        <% else %>
+          <div class="navbar-brand">
+            <img class="center-block" src="/imgs/twitter_blue.png" alt="twitter logo">
+          </div>
+        <% end %>
       </div>
       <% if session[:user_id] %>
         <div class="navbar-right">
-          <button type="button" class="btn btn-danger tweet-button" data-toggle="modal" data-target="#newTweet"><span class="glyphicon glyphicon-edit"></span> Tweet</button>
-          <form action='/logout' method='post'>
+          <form class="navbar-form" action='/logout' method='post'>
             <input type="hidden" name="_method" value="delete">
-            <input type='submit' value='logout'>
+            <button type='submit' class="btn btn-primary nav-button" value='logout'>Logout</button>
+            <button type="button" class="btn btn-primary nav-button" data-toggle="modal" data-target="#newTweet"><span class="glyphicon glyphicon-edit"></span> Tweet</button>
           </form>
         </div>
       <% end %>
@@ -45,11 +51,11 @@
         <div class="modal-body">
           <form action='/tweets' method="POST">
             <div class="form-group">
-              <textarea maxlength="140" class="form-control" name="tweet"></textarea>
+              <textarea maxlength="140" class="form-control" name="tweet" autofocus></textarea>
               <span id="tweetText"><span id="counter">140</span> characters remaining</span>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-edit"></span> Tweet</button>
+              <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Tweet</button>
             </div>
           </form>
         </div>
