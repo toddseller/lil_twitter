@@ -1,12 +1,17 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  has_many :followers, class_name "User", foreign_key: ""
-  has_many
+  has_many :tweets, dependent: :destroy
+
+  has_many :follower_follows, foreign_key: :followee_id, class_name: Follower
+  has_many :followers, through: :follower_follows, source: :follower
+
+  has_many :followee_follows, foreign_key: :followee_id, class_name: Follower
+  has_many :followees, through: :followee_follows, source: :followee
 
   validates :full_name, :email, :username, :password_hash, presence: true
 
-   def password
+  def password
   	@password ||= BCrypt::Password.new(password_hash)
   end
 
