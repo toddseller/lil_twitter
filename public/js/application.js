@@ -10,4 +10,10 @@ $(document).ready(function() {
     var length = maxLength-length;
     $('#counter').text(length);
   });
+  
+  $('#newTweet').on('hidden.bs.modal', function () {
+    $(this).find("input,textarea,select").val('').end();
+    $('#counter').text(maxLength)
+  });
+  
 });
