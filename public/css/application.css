@@ -1,3 +1,7 @@
+body {
+  width: 100%;
+}
+
 .login {
   margin-top: 150px;
   padding: 25px;
@@ -61,4 +65,47 @@ img.logo {
 
 .btn-primary {
   background-color: #226699;
+}
+
+.tweets {
+  width: 506px;
+  padding: 25px 25px 50px 25px;
+  border: 1px solid #8899a6;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1.25em;
+}
+.tweet-stamp {
+  font-size: .75em;
+  color: gray;
+}
+
+.profile {
+  border: 1px solid #8899a6;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.profile h1 {
+  font-size: 1.75em;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+
+}
+.profile-username {
+  margin-top: 0;
+}
+.profile-tags {
+  margin:0 15px 0 15px;
+}
+.profile-counters {
+  margin-top: -15px;
+  font-size: 2em;
+  color: #226699;
+  font-weight: bold;
+}
+.counters {
+  margin-left: 55px;
+  margin-right: 80px;
 }
