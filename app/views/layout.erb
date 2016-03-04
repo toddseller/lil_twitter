@@ -30,6 +30,10 @@
       </div>
       <% if session[:user_id] %>
         <div class="navbar-right">
+          <form action='/users/tweets' method='post'>
+            <input type='text' name='username'>
+            <input type='submit' value='Search'>
+          </form>
           <form class="navbar-form" action='/logout' method='post'>
             <input type="hidden" name="_method" value="delete">
             <button type='submit' class="btn btn-primary nav-button" value='logout'>Logout</button>

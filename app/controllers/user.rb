@@ -37,5 +37,9 @@ delete '/followers' do
 	redirect "/users/#{params[:user_id]}"
 end
 
-
+post '/users/tweets' do 
+  @user = User.find_by(username: params[:username])
+  @tweets = @user.tweets
+  erb :'users/show'
+end
 
