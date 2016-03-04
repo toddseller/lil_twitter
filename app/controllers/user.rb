@@ -18,4 +18,10 @@ post '/users/new' do
 	redirect "/users/#{@user.id}"
 end
 
+get '/users/:id/show' do 
+	@users = User.all
+	@tweets = Tweet.all
+	erb :'users/show'
+end
+
 

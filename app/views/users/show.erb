@@ -1,0 +1,5 @@
+<% @tweets.each do |tweet| %>
+	<p><%=User.find(tweet.user_id).username %><br>
+	<%=tweet.description %></p>
+<% end %>
+
