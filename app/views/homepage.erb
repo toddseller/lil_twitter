@@ -1,0 +1,12 @@
+<h1><%= @user.username %>'s Profile</h1>
+
+<h4>My tweeets:</h4> 
+ <% @tweets.each do |tweet| %>
+ 	<%= tweet.description %><br>
+ <% end %>
+
+ <h4>Who I'm following:</h4> 
+ <% @followee_tweets.each do |tweet| %>
+ 	@<%= User.find(tweet.user_id).username %><br>
+ 	<%= tweet.description %><br>
+ <% end %>
