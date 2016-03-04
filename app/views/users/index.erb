@@ -1,6 +1,6 @@
 Welcome, <%=@user.username%>! Check out the list of followers below. 
 
 <% @users.each do |user| %>
-	<%= user.full_name %>
-	<%= user.username %>
+	<p><%= user.full_name %><br>
+	<a href="/users/#{self.id}">@<%= user.username %></a></p>
 <% end %>
