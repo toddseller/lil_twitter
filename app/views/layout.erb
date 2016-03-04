@@ -25,7 +25,8 @@
       <% if session[:user_id] %>
         <div class="navbar-right">
           <button type="button" class="btn btn-danger tweet-button" data-toggle="modal" data-target="#newTweet"><span class="glyphicon glyphicon-edit"></span> Tweet</button>
-          <form action='/logout' method='get'>
+          <form action='/logout' method='post'>
+            <input type="hidden" name="_method" value="delete">
             <input type='submit' value='logout'>
           </form>
         </div>
@@ -42,7 +43,7 @@
           <h4 class="modal-title">What's happening?</h4>
         </div>
         <div class="modal-body">
-          <form action='/users/<%="#{@user.id}"%>/tweets' method="POST">
+          <form action='/tweets' method="POST">
             <div class="form-group">
               <textarea maxlength="140" class="form-control" name="tweet"></textarea>
               <span id="tweetText"><span id="counter">140</span> characters remaining</span>

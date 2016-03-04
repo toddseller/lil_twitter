@@ -1,5 +1,5 @@
 Welcome, <%=@user.username%>! Check out the list of followers below. 
-<div><a href="/users/<%=@user.id%>/tweets">View My Profile</a></div>
+<div><a href="/homepage">View My Profile</a></div>
 
 <% @users.each do |user| %>
 	<p><%= user.full_name %><br>
