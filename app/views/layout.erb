@@ -21,7 +21,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <% if session[:user_id] %>
-          <a class="navbar-brand center-block" href="#"><img class="center-block" src="/imgs/twitter_blue.png" alt="twitter logo"></a>
+          <a class="navbar-brand center-block" href="/homepage"><img class="center-block" src="/imgs/twitter_blue.png" alt="twitter logo"></a>
         <% else %>
           <div class="navbar-brand">
             <img class="center-block" src="/imgs/twitter_blue.png" alt="twitter logo">
@@ -29,11 +29,15 @@
         <% end %>
       </div>
       <% if session[:user_id] %>
-        <div class="navbar-right">
-          <form action='/users/tweets' method='post'>
-            <input type='text' name='username'>
-            <input type='submit' value='Search'>
+        <div class="navbar-left">
+          <form class="navbar-form" action='/users/tweets' method='post'>
+            <div class="form-group search">
+              <input class="form-control" type='text' name='username'>
+              <button type="submit" class="btn btn-default">Search</button>
+            </div>
           </form>
+        </div>
+        <div class="navbar-right">
           <form class="navbar-form" action='/logout' method='post'>
             <input type="hidden" name="_method" value="delete">
             <button type='submit' class="btn btn-primary nav-button" value='logout'>Logout</button>
