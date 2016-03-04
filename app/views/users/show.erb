@@ -1,26 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3 profile">
-      <h1><%=@user.full_name %></h1>
-      <p class="profile-username"><%= "@#{@user.username}" %></p>
+      <div class="profile-header">
+        <h1><%=@user.full_name %></h1>
+        <p class="profile-username"><%= "@#{@user.username}" %></p>
+      </div>
       <p>TWEETS<span class="profile-tags">FOLLOWING</span><span>FOLLOWERS</span></p>
       <p class="profile-counters"><%= @user.tweets.count %><span class="counters"><%= @user.followers.count %></span><span><%= @user.followees.count %></span></p> 
     </div>
-    <div class="col-sm-offset-1 col-sm-8 tweets">
+    <div class="col-sm-offset-1 col-sm-8">
       <% @tweets.each do |tweet| %>
-      <h4><%="#{@user.full_name} <span class='tweet-stamp'>@#{@user.username} #{tweet.created_at.to_s :short}</span>"%></h4> 
-      <%= tweet.description %><br>
+      <div class="tweets">
+        <h4><%="#{@user.full_name} <span class='tweet-stamp'>@#{@user.username} #{tweet.created_at.to_s :short}</span>"%></h4> 
+        <%= tweet.description %><br>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
-</div>
-
-
-
-
- 
-
-
-
-

@@ -1,5 +1,6 @@
 body {
   width: 100%;
+  background-color: #f5f8fa;
 }
 
 .login {
@@ -27,8 +28,12 @@ th {
 }
 
 .nav-button {
-  margin-top: 7px;
+  margin-top: 5px;
   margin-right: 75px;
+}
+
+.search {
+  margin-top: 5px;
 }
 
 .errors {
@@ -75,6 +80,8 @@ img.logo {
   -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 1.25em;
+  margin-bottom: 5px;
+  background-color: #ffffff;
 }
 .tweet-stamp {
   font-size: .75em;
@@ -86,15 +93,30 @@ img.logo {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  height: 170px;
+  background-color: #ffffff;
 }
 .profile h1 {
   font-size: 1.75em;
   padding-bottom: 0;
   margin-bottom: 5px;
-
+  padding-left: 15px;
+}
+.profile-header {
+  background-color: #226699;
+  color: #ffffff;
+  margin-top: -1px;
+  padding-top: 5px;
+  margin-left: -15px;
+  margin-right: -16px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .profile-username {
   margin-top: 0;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  padding-left: 15px;
 }
 .profile-tags {
   margin:0 15px 0 15px;
