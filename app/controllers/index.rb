@@ -10,5 +10,7 @@ end
 
 post '/login' do 
 	@user = User.find_by(username: params[:username])
+	if @user.authenticate(params[:password])
 	redirect "/users/#{@user.id}"
+end
 end 
