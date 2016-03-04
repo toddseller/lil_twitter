@@ -5,7 +5,6 @@ post '/tweets' do
   	redirect "/tweets"
 end
 
-
 get '/tweets' do
 	if session[:user_id] == nil
 		redirect "/login"
