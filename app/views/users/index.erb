@@ -1,4 +1,4 @@
-Welcome, <%=@user.username%>! Check out the list of followers below. 
+Welcome, <%=@user.full_name.first%>! Check out the list of followers below. 
 <div><a href="/homepage">View My Profile</a></div>
 
 <% @users.each do |user| %>

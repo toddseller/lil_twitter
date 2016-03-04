@@ -8,6 +8,15 @@ end
 
 get '/tweets' do
 	@tweets = Tweet.all
-	erb :'tweets/index'
+	if session[:user_id] == nil
+		redirect "/login"
+	else
+		erb :'tweets/index'
+	end
 end
 
+delete '/tweets' do 
+	@tweet = Tweet.find(params[:id])
+	@tweet.destroy
+	redirect '/tweets'
+end
