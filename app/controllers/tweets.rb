@@ -5,7 +5,6 @@ post '/tweets' do
   	redirect "/tweets"
 end
 
-
 get '/tweets' do
 	@tweets = Tweet.all
 	erb :'tweets/index'

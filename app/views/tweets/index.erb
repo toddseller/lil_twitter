@@ -6,3 +6,12 @@
 	<input type="submit" value="Follow <%=User.find(tweet.user_id).username%>">
 	</form></p>
 <% end %>
+
+<% @favorite.each do |favorite| %>
+  <p><%=favorite.count%></p><br>
+  <p><% counter = Favorite.find_by(tweet_id: tweet.id) %> <%= "Favorite: " + counter.count.to_s %></p>
+<%end%>
+
+
+
+
