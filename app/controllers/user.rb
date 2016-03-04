@@ -26,6 +26,11 @@ post '/users/new' do
 	end
 end
 
+get '/users/show' do
+	redirect "users/#{@user.id}/tweets"
+end
+
+
 get '/users/:id/tweets' do 
 	@tweets = Tweet.all
 	@user = User.find(params[:id])
