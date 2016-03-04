@@ -1,9 +1,12 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many :followers, class_name "User", foreign_key: ""
+  has_many
+
   validates :full_name, :email, :username, :password_hash, presence: true
 
-   def password 
+   def password
   	@password ||= BCrypt::Password.new(password_hash)
   end
 
