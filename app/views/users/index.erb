@@ -1,11 +1,8 @@
-<div class='container'>
-  <h1>Welcome, <%=@user.full_name.first%>! Check out the list of followers below. </h1>
-  <a href="/homepage">View My Profile</a>
-    <% @users.each do |user| %>
-  <div class='col'>
-      <p><%= user.full_name %><br>
-        <a href="/users/<%=user.id%>">@<%= user.username %></a></p><br>
-    </div>
-      <% end %>
-  </div>
-</div>
+Welcome, <%=@user.full_name.first%>! Check out the list of followers below. 
+<div><a href="/homepage">View My Profile</a></div>
+
+<% @users.each do |user| %>
+	<p><%= user.full_name %><br>
+	<a href="/users/<%=user.id%>">@<%= user.username %></a></p>
+	<form></form>
+<% end %>
