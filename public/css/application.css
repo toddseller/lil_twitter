@@ -131,3 +131,10 @@ img.logo {
   margin-left: 55px;
   margin-right: 80px;
 }
+
+.col {
+  width: 30%;
+  margin:15px ;
+  border: 1px solid #8899A6;
+  padding:50px;
+ }
